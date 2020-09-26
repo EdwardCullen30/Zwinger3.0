@@ -1,0 +1,47 @@
+<link rel="stylesheet" type="text/css" href="/css/login.css">
+<link rel="stylesheet" href="/font/fonts.css">
+<link rel="stylesheet" type="text/css" href="/material-design-iconic-font/css/material-design-iconic-font.css">
+
+<div class="login-container"
+     style="background-image: url('/images/home/loginBack.jpg'); background-repeat: no-repeat; background-size: cover; background-position: bottom">
+    <div class="log-form">
+
+        <%- include ("./partials/messages") -%>
+
+        <form action="/users/login" method="POST">
+            <h2>Login</h2>
+            <div class="form-input">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"/>
+                <span class="input-icon" data-symbol=""></span>
+            </div>
+            <div class="form-input">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password"/>
+                <span class="input-icon" data-symbol=""></span>
+            </div>
+            <a class="forgot" href="#">Forgot Username?</a>
+            <div class="submit">
+                <div class="submit-background">                </div>
+                    <button class="btn" type="submit">
+                        Login
+                    </button>
+            </div>
+            <div class="text1">Or Sign up Using</div>
+            <a class="btn-block btn-social btn-google" href="/auth/google" role="button">
+                <div class="google-logo"><img src="/images/logos/google.png" width="28px"></div>
+            </a>
+            <div class="text1">
+                Or
+                <div class="text2" onclick="location.href='/users/register'">
+                    Register Now
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- <div class="log-form">
+  <h2>Login to your account</h2>
+
+  <%- include ("./partials/messages") -%>
+

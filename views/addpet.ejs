@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+
+<%  pet.forEach(function(pet){ %>
+
+  <h1><%=pet.petname%></h1>
+
+  </p>
+
+
+  <% }) %>
+
+<body>
+  <form action="/users/addpet" method="POST" enctype="multipart/form-data">
+    <div class="file-field input-field">
+      <div class="grey">
+        <span>File</span>
+        <input name="myImage" type="file">
+      </div>
+      <div class="file-path-wrapper">
+        <span>Pet name</span>
+        <input name="petname" class="file-path validate" type="text">
+      </div>
+    </div>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+.Container {
+    display: flex;
+    position: absolute;
+    top: 15vh;
+    width: 100vw;
+    justify-content: space-evenly;
+    font-family: Poppins;
+}
+
+.MapContainer {
+    width: 45%;
+    height: 85vh;
+
+}
+
+
+
+.SearchContainer {
+    width: 52%;
+    padding: 2% 5%;
+    box-sizing: border-box;
+}
+
+.SearchContainer h1{
+    margin-top: 0;
+    text-transform: capitalize;
+}
+
+.sortByContainer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+    align-items: center;
+}
+
+.sortBy{
+    width: 15%;
+    margin: 0 3%;
+}
+
+.sortBy input{
+    display: none;
+}
+
+input[type="radio"] + label{
+    font-size: 0.9em;
+    border: 2px black solid;
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type="radio"]:checked + label{
+    background-color: #212121;
+    color: #fff;
+}

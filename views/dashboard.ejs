@@ -1,0 +1,294 @@
+<link rel="stylesheet" type="text/css" href="/css/login.css" xmlns="http://www.w3.org/1999/html">
+<link rel="stylesheet" href="/font/fonts.css">
+
+<div id="app"></div>
+<!--<header>-->
+<!--    <div id="nav" class="dashboard" style="background: none">-->
+<!--        <div class="nav-logo" onclick="location.href='/'">-->
+<!--            <img src="/images/logos/logo(1).png">WINGER-->
+<!--        </div>-->
+<!--        <div class="nav-elements" style="margin-left: auto;" onclick="location.href='/'">Hi, <%= user.fname%></div>-->
+<!--        <div class="nav-elements signup" onclick="location.href='/users/logout'">Logout</div>-->
+<!--    </div>-->
+<!--</header>-->
+<!--<main>-->
+<!--    <div class="container"-->
+<!--         style="background-image: url('/images/home/dashBack.jpg'); background-repeat: no-repeat; background-size: cover; background-position: bottom">-->
+<!--        <div class="side-navbar">-->
+<!--            <div class="elements">-->
+<!--                My Dashboard-->
+<!--            </div>-->
+<!--            <div class="elements">-->
+<!--                Account-->
+<!--            </div>-->
+<!--            <div class="elements">-->
+<!--                Payment-->
+<!--            </div>-->
+<!--            <div class="elements">-->
+<!--                Complaints-->
+<!--            </div>-->
+<!--            <div class="elements">-->
+<!--                Support-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="main-container">-->
+<!--            <div class="profile-column">-->
+<!--                <div class="profile-photo">-->
+<!--                    <img src="/images/placeholder.png" style="width: 35vh">-->
+<!--                </div>-->
+<!--                <form class="profile-edit">-->
+<!--                    <h3>-->
+<!--                        My Profile-->
+<!--                    </h3>-->
+<!--                    <label for="name"></label>-->
+<!--                    <input class="profile-info" id="name" value="<%= user.fname%> <%= user.lname%>">-->
+<!--                    <label for="mobile"></label>-->
+<!--                    <input class="profile-info" id="mobile" value="+91-8000007505">-->
+<!--                    <label for="profile-email"></label>-->
+<!--                    <input class="profile-info" id="profile-email" value="<%= user.email%>">-->
+<!--                    <button type="submit" class="saveEdits">Update</button>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--            <div class="pet-column">-->
+<!--                <div class="petHeader">-->
+<!--                    <h3>My Pets</h3>-->
+<!--                    <button class="editButton" onclick="showAddPet()" >-->
+<!--                        Add Pet-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--                <%  pet.forEach(function(pet){ %>-->
+<!--                    <div class="petList">-->
+<!--                        <img src="/images/logos/dogPlaceholder.png" style="width: 40px; height: 40px ">-->
+<!--                        <h4><%= pet.petname%></h4>-->
+<!--                        <img src="/images/logos/arrowRight.png" style="width: auto; margin-left: auto; " class="expand">-->
+<!--                        <div class="details" >-->
+
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                <% }) %>-->
+<!--            </div>-->
+<!--            &lt;!&ndash;            <div class="bill-column">&ndash;&gt;-->
+<!--            &lt;!&ndash;                <div class="petHeader">&ndash;&gt;-->
+<!--            &lt;!&ndash;                    <h3>My Bills</h3>&ndash;&gt;-->
+<!--            &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--            &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div id="addPetWrap">-->
+<!--        <div class="addPerBackground" onclick="hideAddPet()"></div>-->
+<!--        <div class="addPetContainer">-->
+<!--            <form action="/users/addpet" id="addPetForm" method="POST" enctype="multipart/form-data">-->
+<!--                <div class="formPage">-->
+<!--                    <h1>-->
+<!--                        Nice to meet you, <%= user.fname%><br>-->
+<!--                        Tell us all about your furry,<br>-->
+<!--                        feathery, or scaley friend.-->
+<!--                    </h1>-->
+<!--                    <div class="petTypeContainer">-->
+<!--                        <h2>Which of the following do you have as a pet type</h2>-->
+<!--                        <div class="petCheckBox">-->
+<!--                            <input  type="radio" name="petType" value="dog" id="petDog" checked>-->
+<!--                            <label for="petDog">-->
+<!--                                <img src="/images/logos/dogPlaceholder.png">-->
+<!--                                Dog-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                        <div class="petCheckBox">-->
+<!--                            <input  type="radio" name="petType" value="cat" id="petCat">-->
+<!--                            <label for="petCat">-->
+<!--                                <img src="/images/logos/catPlaceholder.png">-->
+<!--                                Cat-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                        <div class="petCheckBox">-->
+<!--                            <input  type="radio" name="petType" value="bird" id="petBird">-->
+<!--                            <label for="petBird">-->
+<!--                                <img src="/images/logos/birdPlaceholder.png">-->
+<!--                                Bird-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                        <div class="petCheckBox">-->
+<!--                            <input  type="radio" name="petType" value="other" id="petOther">-->
+<!--                            <label for="petOther">-->
+<!--                                <img src="/images/logos/otherPlaceholder.png">-->
+<!--                                Other-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="formPage">-->
+<!--                    <h1>-->
+<!--                        Yay, We love _______ !-->
+<!--                    </h1>-->
+<!--                    <div class="petInfoContainer">-->
+
+<!--                        <div class="petInfoInput">-->
+<!--                            <label for="petname">Name</label>-->
+<!--                            <input type="text" placeholder="Pet's Name" name="petname" id="petname">-->
+<!--                        </div>-->
+<!--                        <div class="petInfoInput">-->
+<!--                            <label for="image" style="display: flex; align-items: center; padding: 0 20px 0 10px; justify-content: space-between">-->
+<!--                                <div class="outputImageContainer">-->
+<!--                                    <img src="/images/logos/camera.png" id="output"/>-->
+<!--                                </div>-->
+<!--                                Upload Photo-->
+<!--                            </label>-->
+<!--                            <input type="file" accept="image/*" onchange="loadFile(event)" id="image" style="display: none">-->
+<!--                        </div>-->
+<!--                        <div class="petInfoInput">-->
+<!--                            <label for="name">Breed</label>-->
+<!--                            <input type="text" placeholder="Pet's Breed">-->
+<!--                        </div>-->
+<!--                        <div class="petInfoInput">-->
+<!--                            <label for="name">Birthday</label>-->
+<!--                            <input type="date">-->
+<!--                        </div>-->
+<!--                        <div class="petInfoInput">-->
+<!--                            <label>Gender</label>-->
+<!--                            <div class="petInfoCheckbox">-->
+<!--                                <input type="radio" value="male" id="male" name="gender">-->
+<!--                                <label for="male">Male</label>-->
+<!--                            </div>-->
+<!--                            <div class="petInfoCheckbox">-->
+<!--                                <input type="radio" value="female" id="female" name="gender">-->
+<!--                                <label for="female">Female</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="petInfoInput">-->
+<!--                            <label for="weight">Weight</label>-->
+<!--                            <input type="text" placeholder="Weight (in Pounds)" id="weight">-->
+<!--                        </div>-->
+<!--                        <div class="petInfoInput"  style="width: 100%">-->
+<!--                            <label>Pet's Behaviour</label>-->
+<!--                            <div class="petInfoCheckbox">-->
+<!--                                <input type="radio" value="rude" id="rude" name="behaviour">-->
+<!--                                <label for="rude">Rude</label>-->
+<!--                            </div>-->
+<!--                            <div class="petInfoCheckbox">-->
+<!--                                <input type="radio" value="op2" id="op2" name="behaviour">-->
+<!--                                <label for="op2">Female</label>-->
+<!--                            </div>-->
+<!--                            <div class="petInfoCheckbox">-->
+<!--                                <input type="radio" value="op3" id="op3" name="behaviour">-->
+<!--                                <label for="op3">Male</label>-->
+<!--                            </div>-->
+<!--                            <div class="petInfoCheckbox">-->
+<!--                                <input type="radio" value="op4" id="op4" name="behaviour">-->
+<!--                                <label for="op4">Female</label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="formPage">-->
+<!--                    <h1>-->
+<!--                        Thanks! Now tell us more about ________-->
+<!--                    </h1>-->
+<!--                    <div class="petDetailContainer">-->
+<!--                        <label style="width: 100%; color: #424242; font-size: 0.8em; margin-bottom: 20px;">Favorite Things</label>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" value="op1" name="favourites">-->
+<!--                            Select All-->
+<!--                        </label>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" value="op2" name="favourites">-->
+<!--                            Giving Kisses-->
+<!--                        </label>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" value="op3" name="favourites">-->
+<!--                            Walks-->
+<!--                        </label>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" value="op4" name="favourites">-->
+<!--                            Barking-->
+<!--                        </label>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" value="op5" name="favourites">-->
+<!--                            Snuggling-->
+<!--                        </label>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" value="op6" name="favourites">-->
+<!--                            Treats-->
+<!--                        </label>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" value="op7" name="favourites">-->
+<!--                            Playing fetch-->
+<!--                        </label>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" value="op8" name="favourites">-->
+<!--                            Naps-->
+<!--                        </label>-->
+<!--                        <label>-->
+<!--                            <input type="checkbox" value="op9" name="favourites">-->
+<!--                            Toys-->
+<!--                        </label>-->
+<!--                        <label for="comments" style="width: 100%; color: #424242; font-size: 0.8em; margin-top: 20px;">Any Comments(Optional)</label>-->
+<!--                        <textarea type="text" name="comments" id="comments" style="width: 80%">-->
+<!--                    </textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="formPage">-->
+<!--                    <h1 style="text-align: center; font-size: 1.5em;">-->
+<!--                        Okay, _______'s all set!<br>-->
+<!--                        We can't wait to meet him/her.-->
+<!--                    </h1>-->
+<!--                    <div class="reviewContainer">-->
+<!--                        <div class="outputImageContainer" style="width: 40px; height: 40px">-->
+<!--                            <img src="/images/logos/dogPlaceholder.png" id="reviewOutput"/>-->
+<!--                        </div>-->
+<!--                        <div class="reviewTextContainer">-->
+<!--                            <div class="reviewHeader">-->
+<!--                                <h2>Pet_Name</h2>-->
+<!--                                <p>Breed</p>-->
+<!--                            </div>-->
+<!--                            <span>FAVOURITE THINGS</span>-->
+<!--                            <div class="favouriteThings">-->
+<!--                                Barking-->
+<!--                            </div>-->
+<!--                            <div class="favouriteThings">-->
+<!--                                Snuggling-->
+<!--                            </div>-->
+<!--                            <div class="favouriteThings">-->
+<!--                                Giving Kisses-->
+<!--                            </div>-->
+<!--                            <div class="favouriteThings">-->
+<!--                                Barking-->
+<!--                            </div>-->
+<!--                            <div class="favouriteThings">-->
+<!--                                Barking-->
+<!--                            </div>-->
+<!--                            <div class="infoContainer">-->
+<!--                                <div class="infoElements">-->
+<!--                                    <div class="infoElementsHead">-->
+<!--                                        <img src="/images/logos/male.png">-->
+<!--                                    </div>-->
+<!--                                    MALE-->
+<!--                                </div>-->
+<!--                                <div class="infoElements">-->
+<!--                                    <div class="infoElementsHead">-->
+<!--                                        8-->
+<!--                                    </div>-->
+<!--                                    Years Old-->
+<!--                                </div>-->
+<!--                                <div class="infoElements">-->
+<!--                                    <div class="infoElementsHead">-->
+<!--                                        50-->
+<!--                                    </div>-->
+<!--                                    Pounds-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="addPetFooter">-->
+<!--                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>-->
+<!--                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</main>-->
+<script type='text/javascript'>
+    const user =<%-JSON.stringify(user)%>
+    const pet =<%-JSON.stringify(pet)%>
+</script>
+<script src="/dist/dashboard.js"></script>
